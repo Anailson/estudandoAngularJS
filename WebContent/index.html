@@ -11,42 +11,23 @@
     <script type="text/javascript" src="resources/script/primeiroController.js"></script>
 </head>
 
-<body id="corpo">
-
-    <div ng-app="" ng-init="mySwitch=true">
-
-        <p>
-            <button ng-disabled="mySwitch">Click Me!</button>
-        </p>
-
-        <p>
-            <input type="checkbox" ng-model="mySwitch">Button
-        </p>
-
-        <p>
-            {{ mySwitch }}
-        </p>
-
-    </div>
-    <br />
-    <br />
-    <br />
-    <div>
-
-        <p ng-show="true">Mostrando</p>
-
-        <p ng-show="false">Escondeu.</p>
-
-    </div>
-    <br />
-    <br />
-    <br />
-
-    <div  ng-init="hour=13">
-
-        <p ng-show="hour > 12">Mostrando horas.</p>
-
-    </div>
+<body id="corpo" ng-controller="controllerPessoa">
+    <input type="text" ng-value="100" ng-model="codPessoa">
+    <br/>
+    <br/>
+    <button ng-click="getPorId();">Buscar por Id</button>
+    <br/>
+    <br/>
+    <button ng-click="getPorTodos();">Buscar por todos</button>
+    <br/>
+    <br/>
+    <button ng-click="salvarPessoa();">Salvar Pessoa</button>    
+    <br/>
+    <br/>
+    <button ng-click="deletarPessoa();">Deletar Pessoa</button> 
+    <br/>
+    <br/>
+    <h1>{{objetoPessoa}}</h1>
 
 
 </body>
