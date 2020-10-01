@@ -36,6 +36,18 @@ public class PegarRespostaJson extends HttpServlet {
 		joObject.put("cidade", "samambaia");
 		jsonArray.put(joObject);
 		
+		joObject = new JSONObject();
+		
+		joObject.put("nome", "analista");
+		joObject.put("cidade", "brasilia");
+		jsonArray.put(joObject);
+		
+		joObject = new JSONObject();
+		
+		joObject.put("nome", "java");
+		joObject.put("cidade", "holanda");
+		jsonArray.put(joObject);
+		
 		response.getWriter().write(jsonArray.toString());
 			
 	}

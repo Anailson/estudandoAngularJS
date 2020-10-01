@@ -4,10 +4,7 @@ var app = angular.module('loja', [ 'ngRoute', 'ngResource']);
 //var app = angular.module('loja', ['ngRoute']);
 //var app = angular.module('loja', [ 'ngRoute', 'ngResource']);
 
-
-
-//INICIO ANGULAR HTTP
-app.controller('pegarResposta', function($scope, $http) {
+app.controller('pegarResposta', function($scope, $http) {//INICIO ANGULAR HTTP
 	$scope.pegarResposta = function () {
 		 $http.get("pegarResposta").then(function(response){
 			 document.getElementById("resposta").value =""+response.data;
@@ -15,7 +12,6 @@ app.controller('pegarResposta', function($scope, $http) {
 	};
   
 });
-
 
 app.controller('pegarResposta2', function($scope, $http) {
 	$scope.pegarResposta2 = function () {
@@ -28,7 +24,6 @@ app.controller('pegarResposta2', function($scope, $http) {
   
 });
 
-
 app.controller('pegarRespostaErro', function($scope, $http) {
 	$scope.pegarRespostaErro = function () {
 		 $http.get("pegarRespostaErro")
@@ -40,9 +35,7 @@ app.controller('pegarRespostaErro', function($scope, $http) {
 	};
   
 });
-
-
-
+//UTILIZANDO NAS TABELAS
 app.controller('pegarRespostaJson', function ($scope, $http) {
 	$http.get("pegarRespostaJson").then(function (response){
 		$scope.lista = response.data;
@@ -51,3 +44,4 @@ app.controller('pegarRespostaJson', function ($scope, $http) {
 });
 
 //FIM ANGULAR HTTP
+
