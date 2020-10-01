@@ -1,6 +1,52 @@
 
 var app = angular.module('loja', [ 'ngRoute', 'ngResource']);
 
+
+app.controller('formCtrl', function($scope) {
+  $scope.master = {firstName: "anailson", lastName: "ribeiro"};
+  $scope.reset = function() {
+    $scope.user = angular.copy($scope.master);
+  };
+  $scope.reset();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.controller('controllerClickme', function($scope) {
+  $scope.showMe = false;
+  $scope.myFunc = function() {
+    $scope.showMe = !$scope.showMe;
+  }
+});
+
+
+app.controller('controllerCordinates', function($scope) {
+  $scope.myFunc = function(myE) {
+    $scope.x = myE.clientX;
+    $scope.y = myE.clientY;
+  }
+});
+
+
+
+
+
 app.controller("controllerPessoa", function($scope, $resource) {
 	
 	//COM SPRING FRAMEWOKRD RESTFULL
