@@ -2,7 +2,81 @@
 var app = angular.module('loja', [ 'ngRoute', 'ngResource','ngAnimate']);
 
 
+ app.controller("filterController", function($scope){
+	$scope.friends = [
+		{
+
+		name : "Mario",
+		lastname: "souza",
+		age : 20,
+		},
+
+		{
+		name : "Analista",
+		lastname: "Java",
+		age : 50,
+		},
+
+		{
+		name : "Paula",
+		lastname: "Banco",
+		age : 90,
+		},
+		
+		{
+		name : "Ila",
+		lastname: "To",
+		age : 33,
+	    },
+  ];
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //CRIANDO DO SERVICE
+
 app.factory("UserService", function(){
 	var users = ['Raquel','Anailson','Ila'];//VIRIA DO BANCO DE DADOS
 
