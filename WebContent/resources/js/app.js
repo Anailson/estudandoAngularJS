@@ -74,7 +74,6 @@ var app = angular.module('loja', [ 'ngRoute', 'ngResource','ngAnimate']);
 
 
 
-
 //CRIANDO DO SERVICE
 
 app.factory("UserService", function(){

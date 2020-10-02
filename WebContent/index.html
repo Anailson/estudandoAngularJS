@@ -1,60 +1,87 @@
-<!DOCTYPE html>
 <html ng-app="loja">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>Sistema em AngularJS</title>
-    <script type="text/javascript" src="resources/script/angular.min.js"></script>
-    <script type="text/javascript" src="resources/script/angular-route.js"></script>
-    <script type="text/javascript" src="resources/script/angular-route.min.js"></script>
-    <script type="text/javascript" src="resources/script/angular-resource.js"></script>
-    <script type="text/javascript" src="resources/script/angular-animate.js"></script>
-    <script type="text/javascript" src="resources/script/angular-locale_pt-br.js"></script>
-    <script type="text/javascript" src="resources/script/primeiroController.js"></script>
-<style>
-@keyframes myChange {
-  from {
-    height: 100px;
-  } to {
-    height: 0;
-  }
-}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Loja</title>
 
-div {
-  height: 100px;
-  background-color: lightblue;
-}
+  <meta charset="ISO-8859-1">
 
-div.ng-hide {
-  animation: 0.5s myChange;
-}
-</style>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="resources/js/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="resources/js/angular.min.js"></script>
+  <script type="text/javascript" src="resources/js/angular-route.js"></script>
+  <script type="text/javascript" src="resources/js/angular-resource.js"></script>
+  <script type="text/javascript" src="resources/js/angular-animate.js"></script>
+  <script type="text/javascript" src="resources/js/angular-locale_pt-br.js"></script>
+
+
+  <script type="text/javascript" src="resources/js/bootstrap-checkbox-radio.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap-notify.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="resources/js/chartist.min.js"></script>
+  <script type="text/javascript" src="resources/js/demo.js"></script>
+
+  <script type="text/javascript" src="resources/js/jquery.mask.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.maskMoney.js"></script>
+  <script type="text/javascript" src="resources/js/jquery-ui.js"></script>
+
+  <link href="resources/css/animate.min.css" rel="stylesheet" />
+  <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="resources/css/demo.css" rel="stylesheet" />
+  <link href="resources/css/paper-dashboard.css" rel="stylesheet" />
+  <link href="resources/css/themify-icons.css" rel="stylesheet" />
+
+  <link href="resources/css/font-awesome.min.css" rel="stylesheet">
+  <link href="resources/css/themify-icons.css" rel="stylesheet">
+  <link href="resources/css/jquery-ui.css" rel="stylesheet">
+
+  <script type="text/javascript" src="resources/js/app.js"></script>
+
+
+
+
+
+  <!--PRIMEIRO CONTROLLER ALTERANDO O NOME-->
+  <script type="text/javascript" src="resources/js/app.js"></script>
 
 </head>
 
 <body id="corpo">
 
-<div>   
-<label>Consulta: <input type="text" ng-model="criteria"></label>
-</div>
+<div class="wrapper">
+		<div class="sidebar" data-background-color="white"
+			data-active-color="danger">
 
-<div ng-controller="filterController">
-    <table>
-       <thead>
-           <th>Name</th>
-           <th>Sobrenome</th>
-           <th>Idade</th>
-       </thead>
-       <tbody>
-           <tr ng-repeat="friend in resultadoQtd = (friends | filter:{name:criteria})">
-            <td>{{friend.name}}</td>
-            <td>{{friend.lastname}}</td>
-            <td>{{friend.age}}</td>
-           </tr>
-       </tbody>
-    </table>
-    <h1>Total resultado:{{resultadoQtd.length}}</h1>
-</div>
+			<div class="sidebar-wrapper">
+
+				<ul class="nav">
+					<li class="active"><a href="#clientelist">
+							<p>Clientes</p>
+					</a></li>
+					<li class="active"><a href="#fornecedorlist">
+							<p>Fornecedor</p>
+					</a></li>
+					<li class="active"><a href="#livrolist">
+							<p>Livro</p>
+					</a></li>
+					<li class="active"><a href="#/loja/online">
+							<p>Loja de livro</p>
+					</a></li>
+					<li class="active"><a href="#/loja/pedidos">
+							<p>Pedidos</p>
+					</a></li>
+					
+					<li class="active"><a href="#/grafico/media_pedido">
+							<p>Média Pedido</p>
+					</a></li>
+				</ul>
+			</div>
+    </div>
+    </div>
 
 </body>
 
