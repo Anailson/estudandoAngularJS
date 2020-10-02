@@ -8,49 +8,40 @@
     <script type="text/javascript" src="resources/script/angular-route.js"></script>
     <script type="text/javascript" src="resources/script/angular-route.min.js"></script>
     <script type="text/javascript" src="resources/script/angular-resource.js"></script>
+    <script type="text/javascript" src="resources/script/angular-animate.js"></script>
+    <script type="text/javascript" src="resources/script/angular-locale_pt-br.js"></script>
     <script type="text/javascript" src="resources/script/primeiroController.js"></script>
+<style>
+@keyframes myChange {
+  from {
+    height: 100px;
+  } to {
+    height: 0;
+  }
+}
+
+div {
+  height: 100px;
+  background-color: lightblue;
+}
+
+div.ng-hide {
+  animation: 0.5s myChange;
+}
+</style>
+
 </head>
 
 <body id="corpo">
 
-    <form>
-        Select a topic:
-        <select ng-model="myVar">
-            <option value="Selecione">
-            <option value="dogs">Dogs
-            <option value="tuts">Tutorials
-            <option value="cars">Cars
-        </select>
-    </form>
 
-    <div ng-switch="myVar">
-        <div ng-switch-when="dogs">
-            <h1>Dogs</h1>
-            <p>Selecionou dogs.</p>
-        </div>
-
-        <div ng-switch-when="tuts">
-            <h1>Tutorials</h1>
-            <p>Selecionou Tutorials..</p>
-        </div>
-
-        <div ng-switch-when="cars">
-            <h1>Cars</h1>
-            <p>Selecionou cars.</p>
-        </div>
+    <div ng-controller="primeiroUserController">
+        <h1>{{primeiro}}</h1>
     </div>
 
-    <div ng-controller="formCtrl">
-        <form novalidate>
-            First Name:<br>
-            <input type="text" ng-model="user.firstName"><br>
-            Last Name:<br>
-            <input type="text" ng-model="user.lastName">
-            <br><br>
-            <button ng-click="reset()">RESET</button>
-        </form>
-        <p>form = {{user}}</p>
-        <p>master = {{master}}</p>
+
+    <div ng-controller="todosUserController">
+        <h1>{{todos}}</h1>
     </div>
 
 

@@ -1,47 +1,54 @@
 
-var app = angular.module('loja', [ 'ngRoute', 'ngResource']);
+var app = angular.module('loja', [ 'ngRoute', 'ngResource','ngAnimate']);
 
 
-app.controller('formCtrl', function($scope) {
-  $scope.master = {firstName: "anailson", lastName: "ribeiro"};
-  $scope.reset = function() {
-    $scope.user = angular.copy($scope.master);
-  };
-  $scope.reset();
+//CRIANDO DO SERVICE
+app.factory("UserService", function(){
+	var users = ['Raquel','Anailson','Ila'];//VIRIA DO BANCO DE DADOS
+
+	return{
+		all: function () {
+			return users; //RETORNA TODA A LISTA
+		},
+		primeiro: function(){
+			return users[0];//RETORNA RAQUEL
+		}
+	};
+});
+
+//CRIAÇÃO DO CONTROLLER
+primeiroUserController = app.controller("primeiroUserController", function($scope,UserService){
+	$scope.primeiro = UserService.primeiro();
 });
 
 
+//ATIVANDO INJEÇÃO DE DEPENDENCIA
+primeiroUserController.$inject=["$scope","UserService"];//INJECT ANGULAR
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.controller('controllerClickme', function($scope) {
-  $scope.showMe = false;
-  $scope.myFunc = function() {
-    $scope.showMe = !$scope.showMe;
-  }
+//SEGUNDO CONTROLLER
+todosUserController = app.controller("todosUserController", function($scope, UserService){
+  $scope.todos = UserService.all();
 });
 
+//ATIVANDO A INJEÇÃO DE DEPEDENCIA
+todosUserController.$inject=["$scope","UserService"];
 
-app.controller('controllerCordinates', function($scope) {
-  $scope.myFunc = function(myE) {
-    $scope.x = myE.clientX;
-    $scope.y = myE.clientY;
-  }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
